@@ -1,0 +1,46 @@
+function walkshow(states)
+  [dummy, n] = size(states);
+
+%   im = {imread('step1.png'),
+% 	imread('step2.png'),
+% 	imread('step3.png'),
+% 	imread('step4.png'),
+% 	imread('step5.png'),
+% 	imread('step6.png'),
+% 	imread('step7.png'),
+% 	imread('step8.png'),
+% 	imread('step9.png'),
+% 	imread('step10.png'),
+% 	imread('step11.png'),
+% 	imread('step12.png'),
+% 	imread('step13.png'),
+% 	imread('step14.png'),
+% 	imread('step15.png'),
+% 	imread('step16.png')};
+
+  im = {imadjust(imread('img/step1.png')),
+	imadjust(imread('img/step2.png')),
+	imadjust(imread('img/step3.png')),
+	imadjust(imread('img/step4.png')),
+	imadjust(imread('img/step5.png')),
+	imadjust(imread('img/step6.png')),
+	imadjust(imread('img/step7.png')),
+	imadjust(imread('img/step8.png')),
+	imadjust(imread('img/step9.png')),
+	imadjust(imread('img/step10.png')),
+	imadjust(imread('img/step11.png')),
+	imadjust(imread('img/step12.png')),
+	imadjust(imread('img/step13.png')),
+	imadjust(imread('img/step14.png')),
+	imadjust(imread('img/step15.png')),
+	imadjust(imread('img/step16.png'))};
+
+
+  p = im{states(1)};
+  for i = 2:n
+    p = [p, im{states(i)}];
+  end
+
+  imwrite(p, 'cartoon.png');
+  imshow(p);
+end
